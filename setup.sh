@@ -17,4 +17,4 @@ fi
 
 . $VENV/bin/activate
 
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
