@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 from hermes_python.hermes import Hermes
 import datetime
 from pytz import timezone
@@ -10,8 +11,11 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 
 def intent_received(hermes, intent_message):
-	sentence = "Je suis ravie, j'ai toujours voulu y aller"
+	
+	liste_reponses = ["Vous m'avez manqué","Contente de vous revoir","Je suis ravie","Enfin de retour à la maison"]
+	sentence = liste_reponses[random.randint(0,len(liste_reponses)-1)]
 	lieu = intent_message.slots.Lieu.first().value
+	sentence += ", j'ai toujours voulu visiter '
 	sentence += lieu
 	hermes.publish_end_session(intent_message.session_id, sentence)
 
