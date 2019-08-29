@@ -12,10 +12,9 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 def intent_received(hermes, intent_message):
 	
-	liste_reponses = ["Vous m'avez manqué"]
+	liste_reponses = ["Je suis ravie"]
 	sentence = liste_reponses[random.randint(0,len(liste_reponses)-1)]
 	lieu = intent_message.slots.Lieu.first().value
-	sentence += ", j'ai toujours voulu visiter '
 	sentence += lieu
 	hermes.publish_end_session(intent_message.session_id, sentence)
 
