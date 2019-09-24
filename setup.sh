@@ -2,6 +2,8 @@
 
 VENV=venv
 
+git reset --hard HEAD
+
 if [ ! -d "$VENV" ]
 then
 
