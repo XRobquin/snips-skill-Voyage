@@ -20,3 +20,5 @@ fi
 . $VENV/bin/activate
 
 pip install -r requirements.txt
+
+sudo chmod +x /var/lib/snips/skills/snips-skill-Voyage/action-discussion.py
